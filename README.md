@@ -4,32 +4,63 @@
 
 **Rescue Link Taguig** is a real-time emergency response and rescue coordination system designed for disaster scenarios such as typhoons and floods. It enables authorities to locate victims, manage rescue requests, and coordinate teams efficiently within Taguig City.
 
-This project is a **thesis system and portfolio-grade full-stack application** demonstrating real-time systems, scalable backend architecture, and modern web development practices.
+This project is a thesis system demonstrating real-time coordination and modern web development practices.
 
 ---
 
-## 🧠 Problem & Solution
+## ⁉️ Problem Definition
 
-### Problem
-
-* Delayed emergency response
-* Lack of real-time visibility
-* Poor coordination between responders
-
-### Solution
-
-A centralized, real-time platform that connects victims and responders instantly, improving decision-making and response time.
+The current emergency response process in Taguig City is often fragmented and inefficient, especially during disasters such as typhoons and flooding. Rescue requests are commonly sent through calls, social media, or messaging platforms, making them difficult to organize, track, and prioritize. This results in delayed responses, lack of coordination, and incomplete information for responders.
 
 ---
 
-## ⚙️ Core Features
+## 🎯 Target Users
 
-* 📍 Real-Time Victim Location Tracking
-* 🆘 Emergency Request Submission
-* 📊 Admin Monitoring Dashboard
-* 🔔 Live Notifications (WebSockets)
-* 🧑‍🚒 Rescue Team Coordination
-* 📈 Data Monitoring & Insights
+### Primary Users
+- Residents of Taguig City  
+  - Individuals affected by disasters who need rescue or assistance  
+
+### Secondary Users
+- Rescue Coordinators / Emergency Responders  
+  - Personnel responsible for monitoring, managing, and responding to rescue requests  
+
+---
+
+## ⭐ Core MVP Features
+
+### Rescue Request Submission
+- Users can submit rescue requests including:
+  - name
+  - message
+  - contact number  
+  - location  
+  - needs (food, water, medical, etc.)
+- No login required for accessibility  
+
+### Real-Time Location Tracking
+- Each request includes location data  
+- Displayed on a map for easy identification by responders  
+
+### Centralized Admin Dashboard
+- Displays all rescue requests in one interface  
+- Includes:
+  - request list  
+  - status  
+  - priority  
+  - map view  
+
+### Request Status Management
+- Admins can update request status:
+  - Pending  
+  - Responding  
+  - In Progress  
+  - Completed  
+
+### Live Updates & Emergency Information
+- Provides:
+  - emergency announcements  
+  - hotlines  
+  - optional live broadcast  
 
 ---
 
@@ -38,26 +69,13 @@ A centralized, real-time platform that connects victims and responders instantly
 * **Frontend:** React / Next.js (App Router)
 * **Backend:** Node.js (NestJS)
 * **Database:** PostgreSQL
-* **Real-Time Layer:** Socket.IO
-* **Cloud:** AWS
+* **Deployment (Planned):** AWS
 
-### 🔄 System Flow
-
-1. User submits rescue request
-2. Backend validates & stores data
-3. Socket.IO broadcasts updates
-4. Admin dashboard receives live data
-5. Rescue teams act and update status
-
----
-
-## 🧩 Technical Highlights
-
-* Full-stack TypeScript architecture
-* Real-time updates using WebSockets
-* Modular backend with NestJS
-* Scalable system design
-* Disaster-response domain modeling
+### 🔄 High-Level Flow
+- Users submit rescue requests
+- Requests are processed and stored
+- Admin dashboard receives updates in real-time
+- Responders coordinate actions based on request data
 
 ---
 
@@ -107,7 +125,7 @@ npm run dev
 
 ## 📸 Screenshots
 
-*To be filled*
+_Screenshots will be added once the UI is finalized._
 
 ---
 
@@ -130,12 +148,6 @@ npm run dev
 
 ---
 
-## 📄 License
-
-Academic use only.
-
----
-
 ## 📬 Contact
 
 * Email: ajbanado15@gmail.com
@@ -144,9 +156,3 @@ Academic use only.
 ---
 
 ⭐ *If this project inspires you, consider giving it a star!*
-
----
-
-## 📁 Project Structure
-
-*This section will be updated once the project structure is finalized.*
