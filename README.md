@@ -33,39 +33,51 @@ The current emergency response process in Taguig City is often fragmented and in
 ### Rescue Request Submission
 
 - Users can submit rescue requests including:
-  - name
-  - message
-  - contact number
-  - location
-  - needs (food, water, medical, etc.)
+  - Name
+  - Contact number
+  - Location (manual input or map selection)
+  - Needs (food, water, medical, etc.)
+  - Optional message
+  - Optional image or video attachments (with file type and size restrictions)
 - No login required for accessibility
+- System issues a unique tracking code upon successful submission
+
+### Request Tracking
+
+- Residents can track their submitted request using their unique tracking code
+- Tracking page displays current status (Pending, Responding, In Progress, Completed)
+- Real-time status updates without page refresh
+- Residents can communicate with their assigned responder via chat from the tracking page
 
 ### Centralized Admin Dashboard
 
 - Displays all rescue requests in one interface
 - Includes:
-  - request list
-  - status
-  - priority
-  - map view
+  - Summary metrics (total, pending, in-progress, completed) with real-time updates
+  - Request list with status badges and urgency indicators
+  - Map view with plotted request locations
+- Admins must log in with credentials to access the dashboard
+- Admins can log out and sessions expire after inactivity
 
-### Request Status Management
+### Request Management
 
+- Admins can claim unassigned requests and manage their own assigned requests
+- Each admin has a dedicated "My Requests" page to avoid overlap with other admins
 - Admins can update request status:
   - Pending
   - Responding
   - In Progress
   - Completed
-- Able to view the location on the map
-- Able to interact with the requester via chat
+- Admins can view full request details including location, needs, and submitted media
+- Admins can communicate with residents via real-time chat from the request details view
 
 ### Live Updates & Emergency Information
 
 - Admins can display or post:
-  - emergency announcements
-  - hotlines
-  - optional live broadcast
-  - rescue emergency resources
+  - Emergency announcements
+  - Hotlines
+  - Optional live broadcast
+  - Rescue emergency resources
 
 ---
 
@@ -74,14 +86,18 @@ The current emergency response process in Taguig City is often fragmented and in
 - **Frontend:** React / Next.js (App Router)
 - **Backend:** Node.js (NestJS)
 - **Database:** PostgreSQL
+- **Real-Time:** Socket.IO via WebSocket Gateway
 - **Deployment (Planned):** AWS
 
 ### High-Level Flow
 
-- Users submit rescue requests
-- Requests are processed and stored
-- Admin dashboard receives updates in real-time
-- Responders coordinate actions based on request data
+1. Residents submit rescue requests without requiring login
+2. System stores the request and issues a unique tracking code to the resident
+3. Resident can track request status and chat with their assigned responder using the tracking code
+4. Admin dashboard receives new requests in real-time
+5. Admins log in, claim requests, and manage them from their personal request page
+6. Responders update request statuses and communicate with residents via chat
+7. Summary metrics and map view update in real-time as statuses change
 
 ---
 
@@ -112,26 +128,30 @@ The current emergency response process in Taguig City is often fragmented and in
 
 ---
 
-````
-
----
-
-## 🚀 Running the Project (Optional)
-
-For developers who want to explore locally:
+## 🚀 Running the Project
 
 ```bash
-git clone https://github.com/your-username/rescue-link-taguig.git
+git clone https://github.com/Arjohn15/rescue-link-taguig.git
 cd rescue-link-taguig
+```
+
+### Backend (API)
+
+```bash
+cd api
+npm install
+npm run start:dev
+```
+
+### Frontend (Web)
+
+```bash
+cd web
 npm install
 npm run dev
-````
+```
 
----
-
-## 📸 Screenshots
-
-_Screenshots will be added once the UI is finalized._
+> Make sure to run the backend before the frontend. Both must be running simultaneously for the system to work correctly.
 
 ---
 
@@ -150,6 +170,12 @@ _Screenshots will be added once the UI is finalized._
 - AI-based request prioritization
 - Government system integration
 - SMS fallback notifications
+
+---
+
+## 📄 License
+
+This project is developed for academic purposes as a thesis requirement. All rights reserved by the development team.
 
 ---
 
