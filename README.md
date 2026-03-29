@@ -1,8 +1,8 @@
-# 🚑 Rescue Link Taguig
+# 🚑 RescueLink - Taguig Emergency Platform
 
 ## 📌 Overview
 
-**Rescue Link Taguig** is a real-time emergency response and rescue coordination system designed for disaster scenarios such as typhoons and floods. It enables authorities to locate victims, manage rescue requests, and coordinate teams efficiently within Taguig City.
+**RescueLink** is a real-time emergency response and rescue coordination system designed for disaster scenarios such as typhoons and floods. It enables authorities to locate victims, manage rescue requests, and coordinate teams efficiently within Taguig City.
 
 This project is a thesis system demonstrating real-time coordination and modern web development practices.
 
@@ -17,61 +17,67 @@ The current emergency response process in Taguig City is often fragmented and in
 ## 🎯 Target Users
 
 ### Primary Users
-- Residents of Taguig City  
-  - Individuals affected by disasters who need rescue or assistance  
+
+- Residents of Taguig City
+  - Individuals affected by disasters who need rescue or assistance
 
 ### Secondary Users
-- Rescue Coordinators / Emergency Responders  
-  - Personnel responsible for monitoring, managing, and responding to rescue requests  
+
+- Rescue Coordinators / Emergency Responders
+  - Personnel responsible for monitoring, managing, and responding to rescue requests
 
 ---
 
 ## ⭐ Core MVP Features
 
 ### Rescue Request Submission
+
 - Users can submit rescue requests including:
   - name
   - message
-  - contact number  
-  - location  
+  - contact number
+  - location
   - needs (food, water, medical, etc.)
-- No login required for accessibility  
-
-### Real-Time Location Tracking
-- Each request includes location data  
-- Displayed on a map for easy identification by responders  
+- No login required for accessibility
 
 ### Centralized Admin Dashboard
-- Displays all rescue requests in one interface  
+
+- Displays all rescue requests in one interface
 - Includes:
-  - request list  
-  - status  
-  - priority  
-  - map view  
+  - request list
+  - status
+  - priority
+  - map view
 
 ### Request Status Management
+
 - Admins can update request status:
-  - Pending  
-  - Responding  
-  - In Progress  
-  - Completed  
+  - Pending
+  - Responding
+  - In Progress
+  - Completed
+- Able to view the location on the map
+- Able to interact with the requester via chat
 
 ### Live Updates & Emergency Information
-- Provides:
-  - emergency announcements  
-  - hotlines  
-  - optional live broadcast  
+
+- Admins can display or post:
+  - emergency announcements
+  - hotlines
+  - optional live broadcast
+  - rescue emergency resources
 
 ---
 
 ## 🏗️ System Architecture
 
-* **Frontend:** React / Next.js (App Router)
-* **Backend:** Node.js (NestJS)
-* **Database:** PostgreSQL
-* **Deployment (Planned):** AWS
+- **Frontend:** React / Next.js (App Router)
+- **Backend:** Node.js (NestJS)
+- **Database:** PostgreSQL
+- **Deployment (Planned):** AWS
 
 ### High-Level Flow
+
 - Users submit rescue requests
 - Requests are processed and stored
 - Admin dashboard receives updates in real-time
@@ -83,26 +89,26 @@ The current emergency response process in Taguig City is often fragmented and in
 
 **Frontend**
 
-* React / Next.js
-* TypeScript
-* Tailwind CSS
+- React / Next.js
+- TypeScript
+- Tailwind CSS
 
 **Backend**
 
-* Node.js (NestJS)
-* REST API + WebSocket Gateway
+- Node.js (NestJS)
+- REST API + WebSocket Gateway
 
 **Database**
 
-* PostgreSQL
+- PostgreSQL
 
 **Real-Time**
 
-* Socket.IO
+- Socket.IO
 
 **Cloud / DevOps**
 
-* AWS
+- AWS
 
 ---
 
@@ -131,28 +137,27 @@ _Screenshots will be added once the UI is finalized._
 
 ## 👥 Team
 
-* **Project Lead / Lead Developer:** Arjohn Banado
-* John Lawrence Amihan
-* Mark Dennis Concha
-* Bob Geof Tortogo
+- **Project Lead / Lead Developer:** Arjohn Banado
+- John Lawrence Amihan
+- Mark Dennis Concha
+- Bob Geof Tortogo
 
 ---
 
 ## 📚 Future Improvements
 
-* Mobile app (React Native)
-* AI-based request prioritization
-* Offline-first capability
-* Government system integration
-* SMS fallback notifications
+- Mobile app (React Native)
+- AI-based request prioritization
+- Government system integration
+- SMS fallback notifications
 
 ---
 
 ## 📬 Contact
 
-* Email: ajbanado15@gmail.com
-* GitHub: https://github.com/Arjohn15/
+- Email: ajbanado15@gmail.com
+- GitHub: https://github.com/Arjohn15/
 
 ---
 
-⭐ *If this project inspires you, consider giving it a star!*
+⭐ _If this project inspires you, consider giving it a star!_
