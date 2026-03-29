@@ -71,7 +71,7 @@ The current emergency response process in Taguig City is often fragmented and in
 * **Database:** PostgreSQL
 * **Deployment (Planned):** AWS
 
-### 🔄 High-Level Flow
+### High-Level Flow
 - Users submit rescue requests
 - Requests are processed and stored
 - Admin dashboard receives updates in real-time
