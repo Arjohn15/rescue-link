@@ -2,7 +2,7 @@
 
 ## Description
 
-This feature allows administrators to post and manage emergency-related information visible to residents during disaster situations. It serves as the official communication channel for broadcasting announcements, hotlines, and resources to the public in real time.
+This feature allows administrators to post and manage emergency-related information visible to residents during disaster situations. It serves as the official communication channel for broadcasting alerts, hotlines, and resources to the public in real time.
 
 ---
 
@@ -17,21 +17,23 @@ This feature allows administrators to post and manage emergency-related informat
 
 ### Admin
 
-#### Story 1: Post Emergency Announcement
+#### Story 1: Post Emergency Alert
 
 As an admin,
-I want to post emergency announcements,
-so that residents are informed about the current situation and what actions to take.
+I want to post emergency alerts with a type,
+so that residents are informed about the current situation and understand how critical it is.
 
 **Acceptance Criteria**
 
-- [ ] Admin can create a new announcement with a title and message body
-- [ ] Admin can set the announcement as active or inactive
-- [ ] Active announcements are immediately visible to residents
-- [ ] Admin can edit an existing announcement
-- [ ] Admin can delete an existing announcement
-- [ ] System displays the date and time the announcement was posted
-- [ ] Announcements are ordered by most recent first
+- [ ] Admin can create a new alert with a title and message body
+- [ ] Admin can set a type for the alert (info, advisory, critical)
+- [ ] Admin can set the alert as active or inactive
+- [ ] Active alerts are immediately visible to residents
+- [ ] Admin can edit an existing alert
+- [ ] Admin can delete an existing alert
+- [ ] System displays the date and time the alert was posted
+- [ ] Alerts are ordered by most recent first
+- [ ] Alerts are visually distinguished by type
 
 ---
 
@@ -87,12 +89,12 @@ so that residents can watch real-time updates directly from the platform.
 #### Story 5: View Emergency Information
 
 As a resident,
-I want to view emergency announcements, hotlines, and resources,
+I want to view emergency alerts, hotlines, and resources,
 so that I can stay informed and know who to contact during a disaster.
 
 **Acceptance Criteria**
 
-- [ ] Resident can view all active emergency announcements
+- [ ] Resident can view all active emergency alerts with their type
 - [ ] Resident can view the list of emergency hotlines
 - [ ] Resident can view available rescue resources
 - [ ] Resident can view the live stream if one is currently active
@@ -105,4 +107,4 @@ so that I can stay informed and know who to contact during a disaster.
 
 - This feature is publicly accessible — no login is required for residents to view emergency information.
 - Admins must be logged in to post, edit, or delete any content on this page.
-- Future enhancement: push notifications to alert residents when a new announcement is posted.
+- Future enhancement: push notifications to alert residents when a new alert is posted.
