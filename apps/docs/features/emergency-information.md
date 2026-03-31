@@ -45,7 +45,9 @@ so that residents can quickly contact the appropriate authorities during a disas
 
 **Acceptance Criteria**
 
-- [ ] Admin can add a new hotline entry with a name and contact number
+- [ ] Admin can add a new hotline entry with a name, contact number, and category
+- [ ] Admin can select a category for the hotline (police, fire, medical, disaster, barangay)
+- [ ] Hotline is displayed with an icon corresponding to its category
 - [ ] Admin can edit an existing hotline entry
 - [ ] Admin can delete a hotline entry
 - [ ] Hotlines are displayed in an organized list visible to residents
@@ -61,7 +63,9 @@ so that residents have access to important information such as evacuation center
 
 **Acceptance Criteria**
 
-- [ ] Admin can add a new resource entry with a title, description, and optional location
+- [ ] Admin can add a new resource entry with a title, description, category, and optional location
+- [ ] Admin can select a category for the resource (evacuation center, relief goods, medical, rescue team, food and water)
+- [ ] Resource is displayed with an icon corresponding to its category
 - [ ] Admin can edit an existing resource entry
 - [ ] Admin can delete a resource entry
 - [ ] Resources are visible to residents on the public-facing page
@@ -95,8 +99,8 @@ so that I can stay informed and know who to contact during a disaster.
 **Acceptance Criteria**
 
 - [ ] Resident can view all active emergency alerts with their type
-- [ ] Resident can view the list of emergency hotlines
-- [ ] Resident can view available rescue resources
+- [ ] Resident can view the list of emergency hotlines with their category icons
+- [ ] Resident can view available rescue resources with their category icons
 - [ ] Resident can view the live stream if one is currently active
 - [ ] Page does not require login to access
 - [ ] Information updates in real time without needing to refresh the page

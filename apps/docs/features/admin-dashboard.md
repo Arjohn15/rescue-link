@@ -146,3 +146,5 @@ so that I can focus on my own assignments without confusion when multiple admins
 - The dashboard is the main command center for administrators.
 - The map service is used for visualization of rescue request locations.
 - Future enhancement: add filtering by barangay, urgency, or request type.
+- Admin accounts are provisioned directly by the system administrator
+  via a seed script. No public registration is available by design.
