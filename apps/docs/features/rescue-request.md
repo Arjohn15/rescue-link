@@ -27,7 +27,8 @@ so that I can ask for help during emergencies.
 - [ ] User can input full name
 - [ ] User can input contact number
 - [ ] User must provide location (can input or select location on the map)
-- [ ] User can select at least one need (e.g., food, water, medical)
+- [ ] User can select at least one need (food, water, medical, shelter, rescue, clothing, other)
+- [ ] Each need is displayed with a corresponding icon
 - [ ] User can enter an optional message
 - [ ] User can upload images or short videos
 - [ ] System enforces file type and size limits for uploaded media

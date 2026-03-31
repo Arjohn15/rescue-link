@@ -82,7 +82,7 @@ so that I can monitor newly submitted incidents and prioritize coordination effe
 - [ ] Dashboard displays a recent requests panel or list
 - [ ] Each item shows resident name
 - [ ] Each item shows request status
-- [ ] Each item shows selected needs
+- [ ] Each item shows selected needs with their corresponding icons
 - [ ] Each item shows submission time
 - [ ] Recent requests are ordered by most recent first
 - [ ] Requests display visible status indicators using consistent labels or badges
@@ -101,7 +101,7 @@ so that I can review complete information and take action.
 
 - [ ] Admin can click a request from the list or map
 - [ ] System opens the corresponding request details view
-- [ ] Request details include name, contact number, location, needs, message, and status
+- [ ] Request details include name, contact number, location, needs with icons, message, and status
 - [ ] Selected request matches the clicked dashboard item
 
 ---
@@ -132,8 +132,8 @@ so that I can focus on my own assignments without confusion when multiple admins
 - [ ] Admin can navigate to a dedicated "My Requests" page
 - [ ] Admin can claim an unassigned request from the main dashboard
 - [ ] Page displays only the requests assigned to or claimed by the currently logged-in admin
-- [ ] Each item shows resident name, status, needs, and submission time
-- [ ] Admin can update the status of their assigned requests from this page
+- [ ] Each item shows resident name, status, needs with icons, and submission time
+- [ ] Admin can update the status of their assigned requests from this page (Pending, In Progress, Completed)
 - [ ] Admin can open full request details from this page
 - [ ] Requests assigned to other admins are not visible on this page
 - [ ] Page reflects real-time updates when request statuses change
@@ -146,5 +146,4 @@ so that I can focus on my own assignments without confusion when multiple admins
 - The dashboard is the main command center for administrators.
 - The map service is used for visualization of rescue request locations.
 - Future enhancement: add filtering by barangay, urgency, or request type.
-- Admin accounts are provisioned directly by the system administrator
-  via a seed script. No public registration is available by design.
+- Admin accounts are provisioned directly by the system administrator via a seed script. No public registration is available by design.

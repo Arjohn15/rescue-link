@@ -45,7 +45,7 @@ The current emergency response process in Taguig City is often fragmented and in
 ### Request Tracking
 
 - Residents can track their submitted request using their unique tracking code
-- Tracking page displays current status (Pending, Responding, In Progress, Completed)
+- Tracking page displays current status (Pending, In Progress, Completed)
 - Real-time status updates without page refresh
 - Residents can communicate with their assigned responder via chat from the tracking page
 
@@ -65,10 +65,9 @@ The current emergency response process in Taguig City is often fragmented and in
 - Each admin has a dedicated "My Requests" page to avoid overlap with other admins
 - Admins can update request status:
   - Pending
-  - Responding
   - In Progress
   - Completed
-- Admins can view full request details including location, needs, and submitted media
+- Admins can view full request details including location, needs with icons, and submitted media
 - Admins can communicate with residents via real-time chat from the request details view
 
 ### Live Updates & Emergency Information
