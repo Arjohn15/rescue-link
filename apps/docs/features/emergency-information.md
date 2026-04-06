@@ -2,7 +2,7 @@
 
 ## Description
 
-This feature allows administrators to post and manage emergency-related information visible to residents during disaster situations. It serves as the official communication channel for broadcasting alerts, hotlines, and resources to the public in real time.
+This feature allows administrators to post and manage emergency-related information visible to residents during disaster situations. It serves as the official communication channel for broadcasting alerts, hotlines, resources, and live streams to the public in real time. All content is publicly accessible without login.
 
 ---
 
@@ -99,9 +99,11 @@ so that I can stay informed and know who to contact during a disaster.
 **Acceptance Criteria**
 
 - [ ] Resident can view all active emergency alerts with their type
+- [ ] Alerts are visually distinguished by type (info, advisory, critical)
 - [ ] Resident can view the list of emergency hotlines with their category icons
 - [ ] Resident can view available rescue resources with their category icons
 - [ ] Resident can view the live stream if one is currently active
+- [ ] Page shows an appropriate message when no live stream is currently active
 - [ ] Page does not require login to access
 - [ ] Information updates in real time without needing to refresh the page
 
@@ -109,6 +111,6 @@ so that I can stay informed and know who to contact during a disaster.
 
 ## Notes (Optional)
 
-- This feature is publicly accessible — no login is required for residents to view emergency information.
+- This feature is publicly accessible. No login is required for residents to view emergency information.
 - Admins must be logged in to post, edit, or delete any content on this page.
 - Future enhancement: push notifications to alert residents when a new alert is posted.

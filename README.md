@@ -1,20 +1,20 @@
-# 🚑 RescueLink - Taguig Emergency Platform
+# RescueLink - Taguig Emergency Platform
 
-## 📌 Overview
+## Overview
 
-**RescueLink** is a real-time emergency response and rescue coordination system designed for disaster scenarios such as typhoons and floods. It enables authorities to locate victims, manage rescue requests, and coordinate teams efficiently within Taguig City.
+**RescueLink** is a real-time emergency response and rescue coordination system designed for disaster scenarios such as typhoons and floods. It enables authorities to locate victims, manage rescue requests, and coordinate rescue teams efficiently within Taguig City.
 
-This project is a thesis system demonstrating real-time coordination and modern web development practices.
-
----
-
-## ⁉️ Problem Definition
-
-The current emergency response process in Taguig City is often fragmented and inefficient, especially during disasters such as typhoons and flooding. Rescue requests are commonly sent through calls, social media, or messaging platforms, making them difficult to organize, track, and prioritize. This results in delayed responses, lack of coordination, and incomplete information for responders.
+This project is a thesis system demonstrating real-time coordination, automated triage, and modern web development practices.
 
 ---
 
-## 🎯 Target Users
+## Problem Definition
+
+During large-scale disasters such as typhoons and flooding, emergency response coordination becomes increasingly challenging. Rescue requests submitted through calls, social media, or messaging platforms are difficult to consolidate, track, and prioritize in real time. This gap can lead to delayed responses and inefficient use of rescue resources, a challenge that many local government units, including those in Taguig City, continue to work toward addressing.
+
+---
+
+## Target Users
 
 ### Primary Users
 
@@ -28,98 +28,82 @@ The current emergency response process in Taguig City is often fragmented and in
 
 ---
 
-## ⭐ Core MVP Features
+## Core Features
 
-### Rescue Request Submission
+| Feature                        | Description                                                                               |
+| ------------------------------ | ----------------------------------------------------------------------------------------- |
+| **Rescue Request Submission**  | Residents submit requests with location and a message. No login required.                 |
+| **Automated Triage**           | Lexicon-based algorithm analyzes the message to detect needs and assign a priority score. |
+| **Low-Bandwidth Optimization** | PWA with offline support and request queuing for 2G/Edge environments.                    |
+| **Request Tracking**           | Residents track status and live rescuer location using a unique tracking code.            |
+| **Admin Dashboard**            | Centralized command view with real-time metrics, map, and request list.                   |
+| **Request Management**         | Admins claim, triage, assign teams, and update requests.                                  |
+| **Rescue Team Management**     | Admins create teams and invite rescuers via email.                                        |
+| **Rescuer Portal**             | Team leads broadcast GPS location during deployment. Members view assignments.            |
+| **Emergency Information**      | Admins post alerts, hotlines, resources, and live streams publicly.                       |
 
-- Users can submit rescue requests including:
-  - Name
-  - Contact number
-  - Location (manual input or map selection)
-  - Needs (food, water, medical, etc.)
-  - Optional message
-  - Optional image or video attachments (with file type and size restrictions)
-- No login required for accessibility
-- System issues a unique tracking code upon successful submission
-
-### Request Tracking
-
-- Residents can track their submitted request using their unique tracking code
-- Tracking page displays current status (Pending, In Progress, Completed)
-- Real-time status updates without page refresh
-- Residents can communicate with their assigned responder via chat from the tracking page
-
-### Centralized Admin Dashboard
-
-- Displays all rescue requests in one interface
-- Includes:
-  - Summary metrics (total, pending, in-progress, completed) with real-time updates
-  - Request list with status badges and urgency indicators
-  - Map view with plotted request locations
-- Admins must log in with credentials to access the dashboard
-- Admins can log out and sessions expire after inactivity
-
-### Request Management
-
-- Admins can claim unassigned requests and manage their own assigned requests
-- Each admin has a dedicated "My Requests" page to avoid overlap with other admins
-- Admins can update request status:
-  - Pending
-  - In Progress
-  - Completed
-- Admins can view full request details including location, needs with icons, and submitted media
-- Admins can communicate with residents via real-time chat from the request details view
-
-### Live Updates & Emergency Information
-
-- Admins can display or post:
-  - Emergency announcements
-  - Hotlines
-  - Optional live broadcast
-  - Rescue emergency resources
+For full feature details, see [`apps/docs/features/`](apps/docs/features/).
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
-- **Frontend:** React / Next.js (App Router)
+- **Frontend:** React / Next.js (App Router, PWA)
 - **Backend:** Node.js (NestJS)
 - **Database:** PostgreSQL
 - **Real-Time:** Socket.IO via WebSocket Gateway
+- **Email:** Gmail API (invite-based rescuer registration)
+- **Maps:** Google Maps API / Mapbox
 - **Deployment (Planned):** AWS
 
 ### High-Level Flow
 
 1. Residents submit rescue requests without requiring login
-2. System stores the request and issues a unique tracking code to the resident
-3. Resident can track request status and chat with their assigned responder using the tracking code
-4. Admin dashboard receives new requests in real-time
-5. Admins log in, claim requests, and manage them from their personal request page
-6. Responders update request statuses and communicate with residents via chat
-7. Summary metrics and map view update in real-time as statuses change
+2. Backend analyzes the message using the triage algorithm and assigns a score and suggested needs
+3. System stores the request and issues a unique tracking code to the resident
+4. If the resident is offline, the request is queued and sent automatically when signal is restored
+5. Admin dashboard receives new requests in real time with triage scores and suggested needs
+6. Admins log in, claim requests, override needs if necessary, and assign rescue teams
+7. Rescue team lead logs in to the rescuer portal and sees their assignment
+8. Team lead's GPS location is broadcast in real time during deployment
+9. Resident tracks the request status and sees the team lead moving on the map
+10. Resident and admin communicate via real-time chat
+11. Team lead marks the request as completed, GPS broadcasting stops, team status returns to available
+12. Summary metrics and map view update in real time as statuses change
 
 ---
 
-## 🧑‍💻 Tech Stack
+## Tech Stack
 
 **Frontend**
 
 - React / Next.js
 - TypeScript
 - Tailwind CSS
+- PWA (next-pwa, Workbox)
 
 **Backend**
 
 - Node.js (NestJS)
 - REST API + WebSocket Gateway
+- Lexicon-Based Weighted Scoring Algorithm (Automated Triage)
 
 **Database**
 
 - PostgreSQL
+- Prisma ORM
 
 **Real-Time**
 
 - Socket.IO
+
+**Maps**
+
+- Google Maps API / Mapbox
+
+**Email**
+
+- Gmail API
 
 **Cloud / DevOps**
 
@@ -127,7 +111,7 @@ The current emergency response process in Taguig City is often fragmented and in
 
 ---
 
-## 🚀 Running the Project
+## Running the Project
 
 ```bash
 git clone https://github.com/Arjohn15/rescue-link-taguig.git
@@ -154,7 +138,7 @@ npm run dev
 
 ---
 
-## 👥 Team
+## Team
 
 - **Project Lead / Lead Developer:** Arjohn Banado
 - John Lawrence Amihan
@@ -163,26 +147,28 @@ npm run dev
 
 ---
 
-## 📚 Future Improvements
+## Future Improvements
 
 - Mobile app (React Native)
-- AI-based request prioritization
+- NLP or ML-based triage for higher accuracy (replacing lexicon-based approach)
 - Government system integration
 - SMS fallback notifications
+- Extend offline support to the rescuer portal
+- Role-based access control (super admin, regular admin, viewer)
 
 ---
 
-## 📄 License
+## License
 
 This project is developed for academic purposes as a thesis requirement. All rights reserved by the development team.
 
 ---
 
-## 📬 Contact
+## Contact
 
 - Email: ajbanado15@gmail.com
 - GitHub: https://github.com/Arjohn15/
 
 ---
 
-⭐ _If this project inspires you, consider giving it a star!_
+_If this project inspires you, consider giving it a star!_

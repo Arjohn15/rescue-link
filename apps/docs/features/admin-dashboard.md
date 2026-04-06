@@ -2,7 +2,7 @@
 
 ## Description
 
-This feature provides administrators with a centralized command interface for monitoring rescue requests, viewing incident locations, and managing emergency response activities. It serves as the main operational view for coordination during disaster situations.
+This feature provides administrators with a centralized command interface for monitoring rescue requests, viewing incident locations, and managing emergency response activities. It serves as the main operational view for coordination during disaster situations. The dashboard displays triage scores and suggested needs from the automated triage algorithm, enabling admins to prioritize and respond to requests efficiently.
 
 ---
 
@@ -24,8 +24,8 @@ so that only authorized personnel can access and manage rescue operations.
 
 **Acceptance Criteria**
 
-- [ ] Admin can access a dedicated login page
-- [ ] Login form includes an email/username field and a password field
+- [ ] Admin can access a dedicated login page at /admin/login
+- [ ] Login form includes an email and password field
 - [ ] Form validates that both fields are filled before submission
 - [ ] System authenticates credentials against the database
 - [ ] Admin is redirected to the dashboard upon successful login
@@ -51,15 +51,15 @@ so that I can quickly understand the current emergency situation.
 - [ ] Summary includes pending requests
 - [ ] Summary includes in-progress requests
 - [ ] Summary includes completed requests
-- [ ] Metrics update in real-time as request statuses change
+- [ ] Metrics update in real time as request statuses change
 
 ---
 
-#### Story 2: View Rescue Requests on a Map
+#### Story 2: View Rescue Requests and Rescue Teams on a Map
 
 As an admin,
-I want to see rescue requests plotted on a map,
-so that I can identify affected locations quickly.
+I want to see rescue requests and active rescue team locations plotted on a map,
+so that I can identify affected locations and monitor team deployments quickly.
 
 **Acceptance Criteria**
 
@@ -67,14 +67,15 @@ so that I can identify affected locations quickly.
 - [ ] Requests with location data appear as map markers
 - [ ] Markers correspond to stored request coordinates
 - [ ] Clicking a marker shows basic request information
-- [ ] Map updates when new requests are added or statuses change
+- [ ] Active rescue team lead locations are shown as moving markers on the map
+- [ ] Map updates when new requests are added, statuses change, or team locations update
 
 ---
 
 #### Story 3: View and Monitor Recent Rescue Requests
 
 As an admin,
-I want to view a list of recent rescue requests with their status and urgency,
+I want to view a list of recent rescue requests with their triage score and status,
 so that I can monitor newly submitted incidents and prioritize coordination effectively.
 
 **Acceptance Criteria**
@@ -82,11 +83,12 @@ so that I can monitor newly submitted incidents and prioritize coordination effe
 - [ ] Dashboard displays a recent requests panel or list
 - [ ] Each item shows resident name
 - [ ] Each item shows request status
-- [ ] Each item shows selected needs with their corresponding icons
+- [ ] Each item shows triage score as a priority indicator
+- [ ] Each item shows suggested needs detected by the triage algorithm with their corresponding icons
 - [ ] Each item shows submission time
-- [ ] Recent requests are ordered by most recent first
+- [ ] Recent requests are ordered by triage score first, then most recent
 - [ ] Requests display visible status indicators using consistent labels or badges
-- [ ] Urgent or high-priority requests are visually distinguishable from others
+- [ ] High triage score requests are visually distinguishable from others
 - [ ] Status display is consistent across all dashboard widgets
 
 ---
@@ -101,7 +103,10 @@ so that I can review complete information and take action.
 
 - [ ] Admin can click a request from the list or map
 - [ ] System opens the corresponding request details view
-- [ ] Request details include name, contact number, location, needs with icons, message, and status
+- [ ] Request details include name, contact number, location, message, and status
+- [ ] Request details show the triage score and suggested needs from the algorithm with their icons
+- [ ] Admin can override the suggested needs if they disagree with the algorithm's assessment
+- [ ] Admin can assign an available rescue team to the request from the details view
 - [ ] Selected request matches the clicked dashboard item
 
 ---
@@ -115,8 +120,9 @@ so that I can provide updates and gather additional information during an emerge
 **Acceptance Criteria**
 
 - [ ] Admin can send messages to the resident from the request details view
-- [ ] Admin can view the full message history with the resident
-- [ ] Chat updates in real-time without needing to refresh the page
+- [ ] Admin can view the full message history including messages from the resident and the assigned team lead
+- [ ] Each message is labeled with the sender role (Admin, Team Lead, Resident)
+- [ ] Chat updates in real time without needing to refresh the page
 - [ ] Admin can only chat with residents of requests assigned to them
 
 ---
@@ -132,7 +138,7 @@ so that I can focus on my own assignments without confusion when multiple admins
 - [ ] Admin can navigate to a dedicated "My Requests" page
 - [ ] Admin can claim an unassigned request from the main dashboard
 - [ ] Page displays only the requests assigned to or claimed by the currently logged-in admin
-- [ ] Each item shows resident name, status, needs with icons, and submission time
+- [ ] Each item shows resident name, status, triage score, suggested needs with icons, and submission time
 - [ ] Admin can update the status of their assigned requests from this page (Pending, In Progress, Completed)
 - [ ] Admin can open full request details from this page
 - [ ] Requests assigned to other admins are not visible on this page
@@ -144,6 +150,6 @@ so that I can focus on my own assignments without confusion when multiple admins
 ## Notes (Optional)
 
 - The dashboard is the main command center for administrators.
-- The map service is used for visualization of rescue request locations.
-- Future enhancement: add filtering by barangay, urgency, or request type.
+- The map service is used for visualization of rescue request locations and active rescue team deployments.
 - Admin accounts are provisioned directly by the system administrator via a seed script. No public registration is available by design.
+- Future enhancement: add filtering by barangay, triage score, or request status.
