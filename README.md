@@ -1,6 +1,6 @@
-# 🚑 RescueLink - Taguig Emergency Platform
+# RescueLink - Taguig Emergency Platform
 
-## 📌 Overview
+## Overview
 
 **RescueLink** is a real-time emergency response and rescue coordination system designed for disaster scenarios such as typhoons and floods. It enables authorities to locate victims, manage rescue requests, and coordinate teams efficiently within Taguig City.
 
@@ -8,13 +8,13 @@ This project is a thesis system demonstrating real-time coordination and modern 
 
 ---
 
-## ⁉️ Problem Definition
+## Problem Definition
 
 The current emergency response process in Taguig City is often fragmented and inefficient, especially during disasters such as typhoons and flooding. Rescue requests are commonly sent through calls, social media, or messaging platforms, making them difficult to organize, track, and prioritize. This results in delayed responses, lack of coordination, and incomplete information for responders.
 
 ---
 
-## 🎯 Target Users
+## Target Users
 
 ### Primary Users
 
@@ -28,7 +28,7 @@ The current emergency response process in Taguig City is often fragmented and in
 
 ---
 
-## ⭐ Core MVP Features
+## Core MVP Features
 
 ### Rescue Request Submission
 
@@ -81,7 +81,7 @@ The current emergency response process in Taguig City is often fragmented and in
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 - **Frontend:** React / Next.js (App Router)
 - **Backend:** Node.js (NestJS)
@@ -101,7 +101,7 @@ The current emergency response process in Taguig City is often fragmented and in
 
 ---
 
-## 🧑‍💻 Tech Stack
+## Tech Stack
 
 **Frontend**
 
@@ -128,7 +128,7 @@ The current emergency response process in Taguig City is often fragmented and in
 
 ---
 
-## 🚀 Running the Project
+## Running the Project
 
 ```bash
 git clone https://github.com/Arjohn15/rescue-link-taguig.git
@@ -155,7 +155,7 @@ npm run dev
 
 ---
 
-## 👥 Team
+## Team
 
 - **Project Lead / Lead Developer:** Arjohn Banado
 - John Lawrence Amihan
@@ -164,7 +164,7 @@ npm run dev
 
 ---
 
-## 📚 Future Improvements
+## Future Improvements
 
 - Mobile app (React Native)
 - AI-based request prioritization
@@ -173,17 +173,17 @@ npm run dev
 
 ---
 
-## 📄 License
+## License
 
 This project is developed for academic purposes as a thesis requirement. All rights reserved by the development team.
 
 ---
 
-## 📬 Contact
+## Contact
 
 - Email: ajbanado15@gmail.com
 - GitHub: https://github.com/Arjohn15/
 
 ---
 
-⭐ _If this project inspires you, consider giving it a star!_
+ _If this project inspires you, consider giving it a star!_
