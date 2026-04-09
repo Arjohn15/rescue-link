@@ -10,17 +10,19 @@ For the visual diagram, see `../design/erd.png`.
 
 ## Tables
 
-| Table             | Description                                                  |
-| ----------------- | ------------------------------------------------------------ |
-| `admins`          | Stores admin credentials and identity                        |
-| `rescue_requests` | Core table storing all resident rescue requests              |
-| `request_needs`   | Stores the selected needs per rescue request                 |
-| `request_media`   | Stores uploaded images and videos per rescue request         |
-| `messages`        | Stores chat messages between admin and resident              |
-| `alerts`          | Admin-posted emergency alerts                                |
-| `hotlines`        | Emergency contact numbers managed by admins                  |
-| `resources`       | Rescue resources such as evacuation centers and relief goods |
-| `live_streams`    | Admin-managed live stream URLs                               |
+| Table                 | Description                                                  |
+| --------------------- | ------------------------------------------------------------ |
+| `admins`              | Stores admin credentials and identity                        |
+| `rescue_teams`        | Stores rescue teams created and managed by admins            |
+| `rescue_team_members` | Stores individual members belonging to a rescue team         |
+| `rescue_requests`     | Core table storing all resident rescue requests              |
+| `request_needs`       | Stores the detected needs per rescue request                 |
+| `request_media`       | Stores uploaded images and videos per rescue request         |
+| `messages`            | Stores chat messages between admin, team lead, and resident  |
+| `alerts`              | Admin-posted emergency alerts                                |
+| `hotlines`            | Emergency contact numbers managed by admins                  |
+| `resources`           | Rescue resources such as evacuation centers and relief goods |
+| `live_streams`        | Admin-managed live stream URLs                               |
 
 ---
 
@@ -36,7 +38,6 @@ Enum alert_type {
   info
   advisory
   critical
-   // more types may be added in the future
 }
 
 Enum hotline_category {
@@ -45,7 +46,6 @@ Enum hotline_category {
   medical
   disaster
   barangay
-   // more types may be added in the future
 }
 
 Enum resource_category {
@@ -54,14 +54,12 @@ Enum resource_category {
   medical
   rescue_team
   food_water
-   // more types may be added in the future
 }
 
 Enum request_status {
   PENDING
   IN_PROGRESS
   COMPLETED
-   // more types may be added in the future
 }
 
 Enum request_need {
@@ -72,19 +70,34 @@ Enum request_need {
   rescue
   clothing
   other
-   // more types may be added in the future
 }
 
 Enum media_type {
   image
   video
-   // more types may be added in the future
 }
 
 Enum sender_role {
   admin
+  team_lead
   resident
-   // more types may be added in the future
+}
+
+Enum team_member_role {
+  lead
+  member
+}
+
+Enum team_status {
+  available
+  deployed
+  off_duty
+}
+
+Enum invite_status {
+  pending
+  accepted
+  expired
 }
 
 // ─── Tables ────────────────────────────────────────
@@ -98,6 +111,30 @@ Table admins {
   updated_at  DateTime [default: `now()`]
 }
 
+Table rescue_teams {
+  id          Int         [pk, increment]
+  name        String
+  status      team_status [default: 'available']
+  created_by  Int         [ref: > admins.id]
+  created_at  DateTime    [default: `now()`]
+  updated_at  DateTime    [default: `now()`]
+}
+
+Table rescue_team_members {
+  id              Int              [pk, increment]
+  team_id         Int              [ref: > rescue_teams.id]
+  name            String           [null]
+  email           String           [unique]
+  password        String           [null]
+  role            team_member_role
+  invite_token    String           [null, unique]
+  invite_status   invite_status    [default: 'pending']
+  invite_expires_at DateTime       [null]
+  invited_by      Int              [ref: > admins.id]
+  created_at      DateTime         [default: `now()`]
+  updated_at      DateTime         [default: `now()`]
+}
+
 Table rescue_requests {
   id               Int            [pk, increment]
   tracking_code    String         [unique]
@@ -106,9 +143,12 @@ Table rescue_requests {
   latitude         Float
   longitude        Float
   location_address String
-  message          String         [null]
+  message          String
+  triage_score     Float          [null]
+  suggested_needs  String[]       [null]
   status           request_status [default: 'PENDING']
   claimed_by       Int            [null, ref: > admins.id]
+  assigned_team    Int            [null, ref: > rescue_teams.id]
   created_at       DateTime       [default: `now()`]
   updated_at       DateTime       [default: `now()`]
 }
@@ -132,6 +172,7 @@ Table messages {
   id          Int         [pk, increment]
   request_id  Int         [ref: > rescue_requests.id]
   sender_role sender_role
+  sender_id   Int
   content     String
   created_at  DateTime    [default: `now()`]
 }
