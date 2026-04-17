@@ -84,5 +84,5 @@ Resident PWA       Admin dashboard     Rescuer portal
 
 - The admin dashboard and rescuer portal require stable internet connectivity.
 - Real-time features such as live GPS tracking stop automatically when a request is marked as completed.
-- Current operational scope is limited to the Bicutan area within Taguig City: Barangay Lower Bicutan, Upper Bicutan, Central Bicutan, and New Lower Bicutan.
+- Current operational scope covers all Bicutan barangays within Taguig City: Barangay Lower Bicutan, Upper Bicutan, Central Bicutan, New Lower Bicutan, and Western Bicutan.
 - Future improvement: extend offline support to the rescuer portal for field use on low-signal deployments.

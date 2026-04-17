@@ -79,7 +79,7 @@ Low-bandwidth optimization applies to the resident side only. The admin dashboar
 The Philippine context presents specific connectivity challenges during disasters:
 
 - Typhoons and flooding frequently disrupt cellular towers
-- Lower Bicutan, Upper Bicutan, Central Bicutan, and New Lower Bicutan may have limited 4G coverage during disaster conditions
+- Lower Bicutan, Upper Bicutan, Central Bicutan, New Lower Bicutan, and Western Bicutan may have limited 4G coverage during disaster conditions
 - Signal congestion during mass emergencies reduces effective bandwidth
 
 AlertoHub is designed to function on 2G/Edge networks, not just 4G/5G, directly addressing these constraints.

@@ -2,7 +2,7 @@
 
 ## Overview
 
-**AlertoHub** is a real-time emergency response and rescue coordination system designed for disaster scenarios such as typhoons and floods. It enables authorities to locate victims, manage rescue requests, and coordinate rescue teams efficiently within the Bicutan service area of Taguig City (Barangay Lower Bicutan, Upper Bicutan, Central Bicutan, and New Lower Bicutan).
+**AlertoHub** is a real-time emergency response and rescue coordination system designed for disaster scenarios such as typhoons and floods. It enables authorities to locate victims, manage rescue requests, and coordinate rescue teams efficiently within the Bicutan service area of Taguig City (Barangay Lower Bicutan, Upper Bicutan, Central Bicutan, New Lower Bicutan, and Western Bicutan).
 
 This project is a thesis system demonstrating real-time coordination, automated triage, and modern web development practices.
 
@@ -10,7 +10,7 @@ This project is a thesis system demonstrating real-time coordination, automated 
 
 ## Problem Definition
 
-During large-scale disasters such as typhoons and flooding, emergency response coordination becomes increasingly challenging. Rescue requests submitted through calls, social media, or messaging platforms are difficult to consolidate, track, and prioritize in real time. This gap can lead to delayed responses and inefficient use of rescue resources, a challenge that many local government units, including those in Taguig City, continue to work toward addressing. This project focuses operationally on the Bicutan area (Barangay Lower Bicutan, Upper Bicutan, Central Bicutan, and New Lower Bicutan).
+During large-scale disasters such as typhoons and flooding, emergency response coordination becomes increasingly challenging. Rescue requests submitted through calls, social media, or messaging platforms are difficult to consolidate, track, and prioritize in real time. This gap can lead to delayed responses and inefficient use of rescue resources, a challenge that many local government units, including those in Taguig City, continue to work toward addressing. This project focuses operationally on all Bicutan barangays (Barangay Lower Bicutan, Upper Bicutan, Central Bicutan, New Lower Bicutan, and Western Bicutan).
 
 ---
 
