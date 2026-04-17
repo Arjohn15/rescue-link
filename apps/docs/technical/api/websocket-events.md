@@ -2,7 +2,7 @@
 
 ## Overview
 
-RescueLink uses Socket.IO via NestJS WebSocket Gateway for all real-time features. This document defines all events, their payloads, the parties involved, and the room strategy used to scope events to specific rescue requests.
+AlertoHub uses Socket.IO via NestJS WebSocket Gateway for all real-time features. This document defines all events, their payloads, the parties involved, and the room strategy used to scope events to specific rescue requests.
 
 ---
 
@@ -90,7 +90,7 @@ Payload:
   "id": 1,
   "tracking_code": "RES-2024-ABCD",
   "full_name": "Maria Santos",
-  "location_address": "Barangay Ususan, Taguig City",
+  "location_address": "Barangay Lower Bicutan, Taguig City",
   "latitude": 14.5217,
   "longitude": 121.0507,
   "triage_score": 5,

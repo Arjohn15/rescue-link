@@ -2,7 +2,7 @@
 
 ## Overview
 
-RescueLink's resident-facing web application is optimized for low-bandwidth and offline conditions using Progressive Web App (PWA) techniques and service workers. This ensures residents can submit rescue requests even when their internet connection is weak or completely unavailable during a disaster. The optimization applies to the resident side only.
+AlertoHub's resident-facing web application is optimized for low-bandwidth and offline conditions using Progressive Web App (PWA) techniques and service workers. This ensures residents can submit rescue requests even when their internet connection is weak or completely unavailable during a disaster. The optimization applies to the resident side only.
 
 ---
 
@@ -79,10 +79,10 @@ Low-bandwidth optimization applies to the resident side only. The admin dashboar
 The Philippine context presents specific connectivity challenges during disasters:
 
 - Typhoons and flooding frequently disrupt cellular towers
-- Rural and low-income areas in Taguig may have limited 4G coverage
+- Lower Bicutan, Upper Bicutan, Central Bicutan, and New Lower Bicutan may have limited 4G coverage during disaster conditions
 - Signal congestion during mass emergencies reduces effective bandwidth
 
-RescueLink is designed to function on 2G/Edge networks, not just 4G/5G, directly addressing these constraints.
+AlertoHub is designed to function on 2G/Edge networks, not just 4G/5G, directly addressing these constraints.
 
 ---
 

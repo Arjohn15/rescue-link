@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document defines the database schema for RescueLink. The ERD is designed using [dbdiagram.io](https://dbdiagram.io).
+This document defines the database schema for AlertoHub. The ERD is designed using [dbdiagram.io](https://dbdiagram.io).
 
 For the visual diagram, see `../design/erd.png`.
 
@@ -29,7 +29,7 @@ For the visual diagram, see `../design/erd.png`.
 ## Schema
 
 ```dbml
-// RescueLink - Taguig Emergency Platform
+// AlertoHub - Bicutan Emergency Platform (Taguig)
 // ERD for dbdiagram.io
 
 // ─── Enums ─────────────────────────────────────────

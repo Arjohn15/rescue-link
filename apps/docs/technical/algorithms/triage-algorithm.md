@@ -2,7 +2,7 @@
 
 ## Overview
 
-RescueLink uses a Lexicon-Based Weighted Scoring Algorithm to automatically analyze rescue request messages and determine the needs and urgency of each request. The algorithm runs on the backend (NestJS) immediately after a request is submitted and before the request is stored in the database.
+AlertoHub uses a Lexicon-Based Weighted Scoring Algorithm to automatically analyze rescue request messages and determine the needs and urgency of each request. The algorithm runs on the backend (NestJS) immediately after a request is submitted and before the request is stored in the database.
 
 ---
 

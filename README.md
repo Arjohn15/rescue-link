@@ -1,8 +1,8 @@
-# RescueLink - Taguig Emergency Platform
+# AlertoHub - Bicutan Emergency Platform (Taguig)
 
 ## Overview
 
-**RescueLink** is a real-time emergency response and rescue coordination system designed for disaster scenarios such as typhoons and floods. It enables authorities to locate victims, manage rescue requests, and coordinate rescue teams efficiently within Taguig City.
+**AlertoHub** is a real-time emergency response and rescue coordination system designed for disaster scenarios such as typhoons and floods. It enables authorities to locate victims, manage rescue requests, and coordinate rescue teams efficiently within the Bicutan service area of Taguig City (Barangay Lower Bicutan, Upper Bicutan, Central Bicutan, and New Lower Bicutan).
 
 This project is a thesis system demonstrating real-time coordination, automated triage, and modern web development practices.
 
@@ -10,7 +10,7 @@ This project is a thesis system demonstrating real-time coordination, automated 
 
 ## Problem Definition
 
-During large-scale disasters such as typhoons and flooding, emergency response coordination becomes increasingly challenging. Rescue requests submitted through calls, social media, or messaging platforms are difficult to consolidate, track, and prioritize in real time. This gap can lead to delayed responses and inefficient use of rescue resources, a challenge that many local government units, including those in Taguig City, continue to work toward addressing.
+During large-scale disasters such as typhoons and flooding, emergency response coordination becomes increasingly challenging. Rescue requests submitted through calls, social media, or messaging platforms are difficult to consolidate, track, and prioritize in real time. This gap can lead to delayed responses and inefficient use of rescue resources, a challenge that many local government units, including those in Taguig City, continue to work toward addressing. This project focuses operationally on the Bicutan area (Barangay Lower Bicutan, Upper Bicutan, Central Bicutan, and New Lower Bicutan).
 
 ---
 
@@ -18,7 +18,7 @@ During large-scale disasters such as typhoons and flooding, emergency response c
 
 ### Primary Users
 
-- Residents of Taguig City
+- Residents of the Bicutan area in Taguig City
   - Individuals affected by disasters who need rescue or assistance
 
 ### Secondary Users
@@ -114,8 +114,8 @@ For full feature details, see [`apps/docs/features/`](apps/docs/features/).
 ## Running the Project
 
 ```bash
-git clone https://github.com/Arjohn15/rescue-link-taguig.git
-cd rescue-link-taguig
+git clone https://github.com/Arjohn15/alerto-hub.git
+cd alerto-hub
 ```
 
 ### Backend (API)

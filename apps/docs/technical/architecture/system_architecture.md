@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes the high-level architecture of RescueLink. The system is composed of three client-facing frontends, a NestJS backend, a PostgreSQL database, a real-time layer via Socket.IO, and two external services.
+This document describes the high-level architecture of AlertoHub. The system is composed of three client-facing frontends, a NestJS backend, a PostgreSQL database, a real-time layer via Socket.IO, and two external services.
 
 For the visual diagram, see `../design/architecture.png`.
 
@@ -35,37 +35,37 @@ Resident PWA       Admin dashboard     Rescuer portal
 
 ### Clients
 
-| Client | Tech | Description |
-|---|---|---|
-| Resident PWA | Next.js + Workbox | Public-facing app for submitting rescue requests. Supports offline use and low-bandwidth conditions. |
-| Admin dashboard | Next.js | Protected interface for managing rescue requests, teams, and emergency information. |
-| Rescuer portal | Next.js | Separate portal for rescue team leads and members to view assignments and broadcast GPS location. |
+| Client          | Tech              | Description                                                                                          |
+| --------------- | ----------------- | ---------------------------------------------------------------------------------------------------- |
+| Resident PWA    | Next.js + Workbox | Public-facing app for submitting rescue requests. Supports offline use and low-bandwidth conditions. |
+| Admin dashboard | Next.js           | Protected interface for managing rescue requests, teams, and emergency information.                  |
+| Rescuer portal  | Next.js           | Separate portal for rescue team leads and members to view assignments and broadcast GPS location.    |
 
 ### Backend
 
-| Component | Tech | Description |
-|---|---|---|
-| REST API | NestJS | Handles all HTTP requests. Enforces JWT authentication for admin and rescuer routes. |
+| Component         | Tech      | Description                                                                                      |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------ |
+| REST API          | NestJS    | Handles all HTTP requests. Enforces JWT authentication for admin and rescuer routes.             |
 | WebSocket gateway | Socket.IO | Manages real-time events including chat messages, live GPS location updates, and status changes. |
 
 ### Data layer
 
-| Component | Tech | Description |
-|---|---|---|
-| Database | PostgreSQL + Prisma | Stores all application data including rescue requests, teams, messages, and emergency information. |
+| Component | Tech                | Description                                                                                        |
+| --------- | ------------------- | -------------------------------------------------------------------------------------------------- |
+| Database  | PostgreSQL + Prisma | Stores all application data including rescue requests, teams, messages, and emergency information. |
 
 ### External services
 
-| Service | Purpose |
-|---|---|
-| Gmail API | Sends invite emails to rescuers for account registration. |
+| Service         | Purpose                                                                         |
+| --------------- | ------------------------------------------------------------------------------- |
+| Gmail API       | Sends invite emails to rescuers for account registration.                       |
 | Google Maps API | Provides map rendering, location selection, and route drawing for GPS tracking. |
 
 ### Deployment
 
-| Target | Description |
-|---|---|
-| AWS | Planned deployment target for both the frontend and backend. |
+| Target | Description                                                  |
+| ------ | ------------------------------------------------------------ |
+| AWS    | Planned deployment target for both the frontend and backend. |
 
 ---
 
@@ -84,4 +84,5 @@ Resident PWA       Admin dashboard     Rescuer portal
 
 - The admin dashboard and rescuer portal require stable internet connectivity.
 - Real-time features such as live GPS tracking stop automatically when a request is marked as completed.
+- Current operational scope is limited to the Bicutan area within Taguig City: Barangay Lower Bicutan, Upper Bicutan, Central Bicutan, and New Lower Bicutan.
 - Future improvement: extend offline support to the rescuer portal for field use on low-signal deployments.

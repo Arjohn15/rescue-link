@@ -2,7 +2,7 @@
 
 ## Overview
 
-RescueLink has two separate authentication flows — one for admins and one for rescuers. Both use JWT (JSON Web Token) for session management. Residents do not require authentication and access public routes freely.
+AlertoHub has two separate authentication flows — one for admins and one for rescuers. Both use JWT (JSON Web Token) for session management. Residents do not require authentication and access public routes freely.
 
 ---
 
@@ -52,7 +52,7 @@ Admin redirected to /admin/login
 ```json
 {
   "sub": 1,
-  "email": "admin@rescuelink.com",
+  "email": "admin@alertohub.com",
   "role": "admin",
   "iat": 1700000000,
   "exp": 1700086400
@@ -132,7 +132,7 @@ Rescuer redirected to /rescuer/login
 ```json
 {
   "sub": 1,
-  "email": "lead@rescuelink.com",
+  "email": "lead@alertohub.com",
   "role": "lead",
   "team_id": 1,
   "iat": 1700000000,

@@ -2,13 +2,13 @@
 
 ## Overview
 
-This document defines the REST API endpoints for RescueLink. All endpoints are prefixed with `/api`. The API is built with NestJS and uses JWT for authentication on protected routes.
+This document defines the REST API endpoints for AlertoHub. All endpoints are prefixed with `/api`. The API is built with NestJS and uses JWT for authentication on protected routes.
 
 ---
 
 ## Authentication
 
-RescueLink has two separate authentication flows:
+AlertoHub has two separate authentication flows:
 
 | Actor                    | Endpoint                       | Token Type |
 | ------------------------ | ------------------------------ | ---------- |
@@ -78,7 +78,7 @@ Request:
 
 ```json
 {
-  "email": "admin@rescuelink.com",
+  "email": "admin@alertohub.com",
   "password": "password"
 }
 ```
@@ -92,7 +92,7 @@ Response:
     "admin": {
       "id": 1,
       "name": "Admin",
-      "email": "admin@rescuelink.com"
+      "email": "admin@alertohub.com"
     }
   },
   "message": "Login successful"
@@ -111,7 +111,7 @@ Request:
 
 ```json
 {
-  "email": "lead@rescuelink.com",
+  "email": "lead@alertohub.com",
   "password": "password"
 }
 ```
@@ -125,7 +125,7 @@ Response:
     "member": {
       "id": 1,
       "name": "Juan dela Cruz",
-      "email": "lead@rescuelink.com",
+      "email": "lead@alertohub.com",
       "role": "lead",
       "team_id": 1
     }
@@ -179,7 +179,7 @@ Request (multipart/form-data):
   "contact_number": "09171234567",
   "latitude": 14.5217,
   "longitude": 121.0507,
-  "location_address": "Barangay Ususan, Taguig City",
+  "location_address": "Barangay Lower Bicutan, Taguig City",
   "message": "We are trapped on the second floor, my grandfather is injured"
 }
 ```
@@ -247,7 +247,7 @@ Response:
     "contact_number": "09171234567",
     "latitude": 14.5217,
     "longitude": 121.0507,
-    "location_address": "Barangay Ususan, Taguig City",
+    "location_address": "Barangay Lower Bicutan, Taguig City",
     "message": "We are trapped on the second floor, my grandfather is injured",
     "status": "PENDING",
     "triage_score": 5,
@@ -646,7 +646,7 @@ Request:
 
 ```json
 {
-  "email": "member@rescuelink.com",
+  "email": "member@alertohub.com",
   "role": "member"
 }
 ```
@@ -657,7 +657,7 @@ Response:
 {
   "data": {
     "id": 2,
-    "email": "member@rescuelink.com",
+    "email": "member@alertohub.com",
     "role": "member",
     "invite_status": "pending"
   },
@@ -719,7 +719,7 @@ Response:
     {
       "id": 1,
       "title": "Typhoon Warning",
-      "body": "Typhoon signal number 2 is raised over Taguig City",
+      "body": "Typhoon signal number 2 is raised over the Bicutan area in Taguig City",
       "type": "critical",
       "is_active": true,
       "created_at": "2024-01-01T00:00:00.000Z"
@@ -743,7 +743,7 @@ Request:
 ```json
 {
   "title": "Typhoon Warning",
-  "body": "Typhoon signal number 2 is raised over Taguig City",
+  "body": "Typhoon signal number 2 is raised over the Bicutan area in Taguig City",
   "type": "critical",
   "is_active": true
 }
@@ -828,7 +828,7 @@ Response:
   "data": [
     {
       "id": 1,
-      "name": "Taguig City Police",
+      "name": "Bicutan Police Substation",
       "number": "02-8838-0000",
       "category": "police"
     }
@@ -850,7 +850,7 @@ Request:
 
 ```json
 {
-  "name": "Taguig City Police",
+  "name": "Bicutan Police Substation",
   "number": "02-8838-0000",
   "category": "police"
 }
@@ -862,7 +862,7 @@ Response:
 {
   "data": {
     "id": 1,
-    "name": "Taguig City Police",
+    "name": "Bicutan Police Substation",
     "number": "02-8838-0000",
     "category": "police"
   },
@@ -934,10 +934,10 @@ Response:
   "data": [
     {
       "id": 1,
-      "title": "Ususan Evacuation Center",
-      "description": "Located at Barangay Ususan covered court",
+      "title": "Lower Bicutan Evacuation Center",
+      "description": "Located at Barangay Lower Bicutan covered court",
       "category": "evacuation_center",
-      "location": "Barangay Ususan, Taguig City"
+      "location": "Barangay Lower Bicutan, Taguig City"
     }
   ],
   "message": "Success"
@@ -957,10 +957,10 @@ Request:
 
 ```json
 {
-  "title": "Ususan Evacuation Center",
-  "description": "Located at Barangay Ususan covered court",
+  "title": "Lower Bicutan Evacuation Center",
+  "description": "Located at Barangay Lower Bicutan covered court",
   "category": "evacuation_center",
-  "location": "Barangay Ususan, Taguig City"
+  "location": "Barangay Lower Bicutan, Taguig City"
 }
 ```
 
@@ -970,7 +970,7 @@ Response:
 {
   "data": {
     "id": 1,
-    "title": "Ususan Evacuation Center",
+    "title": "Lower Bicutan Evacuation Center",
     "category": "evacuation_center"
   },
   "message": "Resource created successfully"
